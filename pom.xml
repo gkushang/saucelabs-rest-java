@@ -27,8 +27,8 @@
     <distributionManagement>
         <repository>
             <id>cloud-release</id>
-            <!--<name>sauce-cloudbee-release</name>-->
-            <url>http://repository-kugajjar.forge.cloudbees.com/release/</url>
+            <name>sauce-cloudbee-release</name>
+            <url>dav:http://repository-kugajjar.forge.cloudbees.com/release/</url>
         </repository>
     </distributionManagement>
 
