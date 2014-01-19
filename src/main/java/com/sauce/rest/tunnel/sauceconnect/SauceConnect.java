@@ -10,7 +10,7 @@ import java.text.MessageFormat;
 import java.util.Arrays;
 import java.util.List;
 
-import com.sauce.rest.tunnel.credentials.Credentials;
+import com.sauce.rest.tunnel.authentication.Authentication;
 import com.sauce.rest.tunnel.exceptions.TunnelExistsException;
 import com.sauce.rest.tunnel.exceptions.TunnelNotFoundException;
 import org.apache.commons.codec.binary.Base64;
@@ -34,7 +34,7 @@ import static org.codehaus.jackson.annotate.JsonAutoDetect.Visibility.NONE;
 
 public class SauceConnect
 {
-    private final Credentials _credentials;
+    private final Authentication _authentication;
 
     private static final ObjectMapper OBJ_MAPPER = new ObjectMapper();
 
@@ -45,16 +45,16 @@ public class SauceConnect
         OBJ_MAPPER.setVisibilityChecker(new VisibilityChecker.Std(NONE, NONE, NONE, NONE, ANY));
     }
 
-    public SauceConnect(Credentials credentials)
+    public SauceConnect(Authentication authentication)
     {
-        Validate.notNull(credentials, "credentials cannot be null");
+        Validate.notNull(authentication, "authentication cannot be null");
 
-        _credentials = credentials;
+        _authentication = authentication;
     }
 
     private URL _getTunnelRestUrl() throws MalformedURLException
     {
-        return new URL(MessageFormat.format(Constants.RestUrl.SAUCE_TUNNELS, _credentials.getUsername()));
+        return new URL(MessageFormat.format(Constants.RestUrl.SAUCE_TUNNELS, _authentication.getUsername()));
     }
 
     public ConnectStatus connect(String tunnelIdentifier, String... domainNames) throws IOException, TunnelExistsException
@@ -144,7 +144,7 @@ public class SauceConnect
     {
         Validate.notEmpty(jobId, "jobId cannot be null or empty");
 
-        return new URL(MessageFormat.format(Constants.RestUrl.SAUCE_TUNNEL, _credentials.getUsername(), jobId));
+        return new URL(MessageFormat.format(Constants.RestUrl.SAUCE_TUNNEL, _authentication.getUsername(), jobId));
     }
 
     private HttpURLConnection _getConnection(final URL restUrl, final String requestType) throws IOException
@@ -156,7 +156,7 @@ public class SauceConnect
         HttpURLConnection connection = (HttpURLConnection) restUrl.openConnection();
 
         connection.setRequestProperty("Authorization", "Basic " + new String(
-                Base64.encodeBase64((_credentials.getUsername() + ":" + _credentials.getKey())
+                Base64.encodeBase64((_authentication.getUsername() + ":" + _authentication.getKey())
                                             .getBytes())));
 
         connection.setRequestMethod(requestType);

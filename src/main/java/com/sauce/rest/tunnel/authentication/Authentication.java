@@ -1,19 +1,19 @@
-package com.sauce.rest.tunnel.credentials;
+package com.sauce.rest.tunnel.authentication;
 
 import org.apache.commons.lang.Validate;
 
 
 /**
- * Sauce Labs Credentials
+ * Sauce Labs Authentication
  *
  * @author Kushang Gajjar
  */
-public class Credentials
+public class Authentication
 {
     private final String _username;
     private final String _key;
 
-    public Credentials(String username, String key)
+    public Authentication(String username, String key)
     {
         Validate.notEmpty(username, "username cannot be null or empty");
         Validate.notEmpty(key, "key cannot be null or empty");

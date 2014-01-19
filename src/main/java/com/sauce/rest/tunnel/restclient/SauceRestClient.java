@@ -1,6 +1,6 @@
 package com.sauce.rest.tunnel.restclient;
 
-import com.sauce.rest.tunnel.credentials.Credentials;
+import com.sauce.rest.tunnel.authentication.Authentication;
 import com.sauce.rest.tunnel.sauceconnect.SauceConnect;
 import org.apache.commons.lang.Validate;
 
@@ -13,19 +13,19 @@ import org.apache.commons.lang.Validate;
 
 public class SauceRestClient
 {
-    private final Credentials _credentials;
+    private final Authentication _authentication;
 
     public SauceRestClient(String username, String key)
     {
         Validate.notEmpty(username, "username cannot be null or empty");
         Validate.notEmpty(key, "key cannot be null or empty");
 
-        _credentials = new Credentials(username, key);
+        _authentication = new Authentication(username, key);
     }
 
     public SauceConnect sauceConnect()
     {
-        return new SauceConnect(_credentials);
+        return new SauceConnect(_authentication);
     }
 
 }

@@ -24,13 +24,13 @@
     </scm>
 
 
-    <!--<distributionManagement>-->
-    <!--<repository>-->
-    <!--<id>release</id>-->
-    <!--<name>Nexus Release Repository</name>-->
-    <!--<url>http://oss.sonatype.org/service/local/staging/deploy/maven2/</url>-->
-    <!--</repository>-->
-    <!--</distributionManagement>-->
+    <distributionManagement>
+        <repository>
+            <id>cloud-release</id>
+            <!--<name>sauce-cloudbee-release</name>-->
+            <url>http://repository-kugajjar.forge.cloudbees.com/release/</url>
+        </repository>
+    </distributionManagement>
 
     <build>
         <plugins>
