@@ -1,4 +1,4 @@
-package com.saucelabs.rest.tunnel.sauceconnect;
+package com.sauce.rest.tunnel.sauceconnect;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -10,9 +10,9 @@ import java.text.MessageFormat;
 import java.util.Arrays;
 import java.util.List;
 
-import com.saucelabs.rest.tunnel.credentials.Credentials;
-import com.saucelabs.rest.tunnel.exceptions.TunnelExistsException;
-import com.saucelabs.rest.tunnel.exceptions.TunnelNotFoundException;
+import com.sauce.rest.tunnel.credentials.Credentials;
+import com.sauce.rest.tunnel.exceptions.TunnelExistsException;
+import com.sauce.rest.tunnel.exceptions.TunnelNotFoundException;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang.Validate;

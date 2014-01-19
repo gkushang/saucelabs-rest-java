@@ -1,4 +1,4 @@
-package com.saucelabs.rest.tunnel.sauceconnect;
+package com.sauce.rest.tunnel.sauceconnect;
 
 import java.util.HashMap;
 import java.util.Map;

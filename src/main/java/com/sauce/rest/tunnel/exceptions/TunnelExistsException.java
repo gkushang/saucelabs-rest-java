@@ -1,4 +1,4 @@
-package com.saucelabs.rest.tunnel.exceptions;
+package com.sauce.rest.tunnel.exceptions;
 
 public class TunnelExistsException extends Exception
 {

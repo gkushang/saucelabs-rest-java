@@ -1,4 +1,4 @@
-package com.saucelabs.rest.tunnel.sauceconnect;
+package com.sauce.rest.tunnel.sauceconnect;
 
 /**
  * Constants
@@ -9,8 +9,8 @@ class Constants
 {
     public class RestUrl
     {
-        public static final String SAUCE_TUNNELS = "https://saucelabs.com/rest/{0}/tunnels";
-        public static final String SAUCE_TUNNEL = "https://saucelabs.com/rest/{0}/tunnels/{1}";
+        public static final String SAUCE_TUNNELS = "https://sauce.com/rest/{0}/tunnels";
+        public static final String SAUCE_TUNNEL = "https://sauce.com/rest/{0}/tunnels/{1}";
     }
 
 

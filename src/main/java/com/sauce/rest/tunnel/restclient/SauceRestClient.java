@@ -1,7 +1,7 @@
-package com.saucelabs.rest.tunnel.restclient;
+package com.sauce.rest.tunnel.restclient;
 
-import com.saucelabs.rest.tunnel.credentials.Credentials;
-import com.saucelabs.rest.tunnel.sauceconnect.SauceConnect;
+import com.sauce.rest.tunnel.credentials.Credentials;
+import com.sauce.rest.tunnel.sauceconnect.SauceConnect;
 import org.apache.commons.lang.Validate;
 
 

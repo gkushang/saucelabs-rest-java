@@ -1,4 +1,4 @@
-package com.saucelabs.rest.tunnel.credentials;
+package com.sauce.rest.tunnel.credentials;
 
 import org.apache.commons.lang.Validate;
 
